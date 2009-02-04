@@ -11,7 +11,7 @@ License: クリエイティブ・コモンズの表示 2.1 日本ライセンス
 *tabrecent* は最近開いたタブページに移動するためのコマンドを定義します。
 
 ==============================================================================
-コマンド 					*tabrecent-key-mappings*
+コマンド 					*tabrecent-command*
 
 :[count]TabRecent [count]			*:TabRecent*
 		[count] つ前に開いたタブページに移動します。 [count] が省略さ

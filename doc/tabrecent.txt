@@ -11,7 +11,7 @@ INTRODUCTION					*tabrecent-introduction*
 *tabrecent* is a Vim plugin to provide a command to go to the latest tab page.
 
 ==============================================================================
-COMMAND 					*tabrecent-key-mappings*
+COMMAND 					*tabrecent-command*
 
 :[count]TabRecent [count]			*:TabRecent*
 		Go to the accessed tab page before [count]. When [count] is
