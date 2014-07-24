@@ -1,5 +1,5 @@
 " You can go to the recent tab page.
-" Version: 0.1
+" Version: 0.2
 " Author : thinca <thinca+vim@gmail.com>
 " License: zlib License
 

@@ -1,6 +1,6 @@
 *tabrecent.txt*	You can go to the recent tab page.
 
-Version: 0.1
+Version: 0.2
 Author : thinca <thinca+vim@gmail.com>
 License: zlib License
 
@@ -22,6 +22,11 @@ COMMAND 					*tabrecent-command*
 
 ==============================================================================
 CHANGELOG					*tabrecent-changelog*
+
+0.2	2014-07-25
+	- Fix a bug when there is only a single tab.
+	- autoloadize.
+	- Change license.
 
 0.1	2009-01-27
 	- Initial version.

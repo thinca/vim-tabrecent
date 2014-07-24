@@ -1,6 +1,6 @@
 *tabrecent.txt*	最近開いたタブページに移動します。
 
-Version: 0.1
+Version: 0.2
 Author : thinca <thinca+vim@gmail.com>
 License: zlib License
 
@@ -22,6 +22,11 @@ License: zlib License
 
 ==============================================================================
 更新履歴					*tabrecent-changelog*
+
+0.2	2014-07-25
+	- タブページが 1 つしかない場合のエラーを修正。
+	- autoload 化。
+	- ライセンス変更。
 
 0.1	2009-01-27
 	- 初版。
