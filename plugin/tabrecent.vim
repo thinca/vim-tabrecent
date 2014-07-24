@@ -84,7 +84,7 @@ augroup plugin-tabrecent
   endif
 augroup END
 
-command! -count=1 -nargs=? -bang TabRecent call s:recent(<count>, <q-args>, len('<bang>'))
+command! -count=1 -nargs=? -bang TabRecent call s:recent(<count>, <q-args>, <bang>0)
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
