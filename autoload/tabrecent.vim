@@ -8,15 +8,24 @@ set cpo&vim
 
 
 " Get tab list with mru.
-function! s:tablist()
-  let tablist = []
-  let current = tabpagenr()
-  noautocmd tabdo call add(tablist, {
-    \ 'tabnr' : tabpagenr(),
-    \ 'time'  : exists('t:tabrecent_time') ? t:tabrecent_time : 0})
-  noautocmd execute 'tabnext' current
-  return sort(tablist, 's:compare')
-endfunction
+if exists('*gettabvar')
+  function! s:tablist()
+    return map(range(1, tabpagenr('$')), '{
+    \   "tabnr": v:val,
+    \   "time": gettabvar(v:val, "tabrecent_time"),
+    \ }')
+  endfunction
+else
+  function! s:tablist()
+    let tablist = []
+    let current = tabpagenr()
+    noautocmd tabdo call add(tablist, {
+      \ 'tabnr' : tabpagenr(),
+      \ 'time'  : exists('t:tabrecent_time') ? t:tabrecent_time : 0})
+    noautocmd execute 'tabnext' current
+    return tablist
+  endfunction
+endif
 
 function! s:compare(left, right)
   return a:left.time == a:right.time ? 0 : a:left.time < a:right.time ? 1 : -1
@@ -52,7 +61,7 @@ function! tabrecent#move(c, args, relative)
   if strlen(a:args)
     let c = str2nr(a:args)
   endif
-  let tablist = s:tablist()
+  let tablist = sort(s:tablist(), 's:compare')
   if a:relative
     let nr = tabpagenr()
     let jump = -1
