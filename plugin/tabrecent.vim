@@ -51,6 +51,9 @@ if has('reltime')
 endif
 
 function! s:recent(c, args, relative)
+  if tabpagenr('$') == 1
+    return
+  endif
   let c = a:c
   if strlen(a:args)
     let c = str2nr(a:args)
