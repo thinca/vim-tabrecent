@@ -89,5 +89,3 @@ command! -count=1 -nargs=? -bang TabRecent call s:recent(<count>, <q-args>, len(
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
-
-finish
